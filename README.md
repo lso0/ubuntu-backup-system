@@ -28,8 +28,6 @@ Captures system configuration, installed packages, and settings - stored directl
 
 **Usage:**
 ```bash
-./config-backup.sh          # Backup configuration
-./quick-restore.sh           # One-command restore on fresh Ubuntu
 sudo apt install curl
 curl -s https://raw.githubusercontent.com/lso0/ubuntu-backup-system/master/quick-restore.sh -o quick-restore.sh
 chmod +x quick-restore.sh
