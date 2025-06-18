@@ -34,6 +34,29 @@ chmod +x quick-restore.sh
 ./quick-restore.sh
 ```
 
+**Additional Software Installation:**
+Some packages may not be available in the default Ubuntu repositories and require additional setup:
+
+- **fastfetch**: Install from GitHub releases
+  ```bash
+  wget https://github.com/fastfetch-cli/fastfetch/releases/latest/download/fastfetch-linux-amd64.deb -O fastfetch.deb
+  sudo apt install ./fastfetch.deb
+  ```
+
+- **google-chrome-stable**: Add Google's official APT repository
+  ```bash
+  wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/google-linux.gpg
+  echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-linux.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+  sudo apt update
+  sudo apt install google-chrome-stable
+  ```
+
+- **warp-terminal**: Install from Warp's official releases
+  ```bash
+  wget https://releases.warp.dev/linux/warp-latest-amd64.deb
+  sudo apt install ./warp-latest-amd64.deb
+  ```
+
 ### 1. System Image Backup (`method1-system-image/`)
 Creates a complete disk image using `dd` command that captures everything including boot sectors, partitions, and all data.
 
