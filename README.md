@@ -30,7 +30,10 @@ Captures system configuration, installed packages, and settings - stored directl
 ```bash
 ./config-backup.sh          # Backup configuration
 ./quick-restore.sh           # One-command restore on fresh Ubuntu
-curl -s https://raw.githubusercontent.com/lso0/ubuntu-backup-system/master/quick-restore.sh | bash
+sudo apt install curl
+curl -s https://raw.githubusercontent.com/lso0/ubuntu-backup-system/master/quick-restore.sh -o quick-restore.sh
+chmod +x quick-restore.sh
+./quick-restore.sh
 ```
 
 ### 1. System Image Backup (`method1-system-image/`)
