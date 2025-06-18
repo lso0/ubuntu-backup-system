@@ -13,7 +13,8 @@ echo "3. Restore system configuration"
 echo "4. Reinstall all packages"
 echo ""
 read -p "Continue? (y/N): " -n 1 -r
-echo
+echo ""
+
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     echo "Restore cancelled."
     exit 1
