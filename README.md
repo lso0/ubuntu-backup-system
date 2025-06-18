@@ -10,6 +10,28 @@ This repository contains scripts and documentation for creating complete backups
 
 ## Backup Methods
 
+### 🔧 Configuration Backup (Stored in GitHub)
+Captures system configuration, installed packages, and settings - stored directly in the GitHub repository.
+
+**What's included:**
+- All installed packages (apt, snap)
+- System configuration files
+- User settings (.bashrc, .profile, etc.)
+- Enabled services
+- Hardware information
+
+**Pros:**
+- Stored directly in GitHub
+- Tiny size (< 1MB)
+- Can restore system state on fresh install
+- Version controlled
+
+**Usage:**
+```bash
+./config-backup.sh          # Backup configuration
+./quick-restore.sh           # One-command restore on fresh Ubuntu
+```
+
 ### 1. System Image Backup (`method1-system-image/`)
 Creates a complete disk image using `dd` command that captures everything including boot sectors, partitions, and all data.
 
